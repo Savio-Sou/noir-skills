@@ -1,43 +1,42 @@
 ---
 name: noir-developer
-description: Develop Noir (.nr) codebases. Use when creating a Noir project and writing code in Noir.
-license: MIT
+description: Develop Noir (.nr) codebases. Use when creating a project or writing code with Noir.
 ---
 
 # Noir Developer
 
 ## Workflow
 
-The typical Noir development workflow:
-
-1. Compilation (`nargo compile`) for compiling a Noir program into ACIR
-2. Witness generation (`nargo execute` / NoirJS execute) for computing the witness for proving
-3. Proving with the proving backend of choice for generating a proof
-4. Verifying with the proving backend of choice for verifying validity of the proof generated
+1. Compile (`nargo compile`) Noir program into ACIR.
+2. Generate witness (`nargo execute` or NoirJS execute) based on ACIR and user inputs.
+3. Prove using ACIR and witness with the selected proving backend.
+4. Verify proof with the selected proving backend.
 
 ## Task Patterns
 
+### Environment
+
+If the environment is unsupported by `nargo` (e.g. native Windows), guide the user to using GitHub Codespaces (https://noir-lang.org/docs/tooling/devcontainer#using-github-codespaces) or a supported setup (WSL, Docker, or VM).
+
 ### Plan
 
-When planning, clearly define what will be the expected private inputs, public inputs (if any) and public outputs (if any) for the Noir programs in the project.
+Define private inputs, public inputs (if any), and public outputs (if any) for each Noir program.
 
 ### Compilation
 
-Use `nargo` for compiling Noir code as it is the only compilation approach maintained.
-
-If the user is in an environment that `nargo` does not support (e.g. Windows), recommend and guide the user switching to and setting up a supported environment through e.g. WSL, Docker, VM.
+Use `nargo` (not `noir_wasm`) for compilation; it is the maintained path.
 
 ### Validation
 
-Run `nargo test` to run tests written and validate implementations in Noir.
+Run `nargo test` to validate Noir implementations.
 
 ### Proving Backend
 
-Confirm the proving backend choice before implementation details. If the user selects Barretenberg.
+Confirm the proving backend choice before implementation details. If the user selects Barretenberg, read `references/barretenberg.md`.
 
 ## References
 
-- Run `nargo --help` to access the full list of available `nargo` commands
-- Read https://noir-lang.org/docs/ for documentation of language syntaxes, dependency architecture, tooling references, and tutorials
+- Run `nargo --help` for the full list of commands.
+- Read https://noir-lang.org/docs/ for language syntax, dependencies, and tooling.
 - Proving backends:
-  - For Barretenberg specifics, read `references/proving-backends/barretenberg.md`.
+  - For Barretenberg specifics, read `references/barretenberg.md`.
