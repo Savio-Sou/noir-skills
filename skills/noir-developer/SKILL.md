@@ -31,7 +31,13 @@ If the user is in an environment that `nargo` does not support (e.g. Windows), r
 
 Run `nargo test` to run tests written and validate implementations in Noir.
 
+### Proving Backend
+
+Confirm the proving backend choice before implementation details. If the user selects Barretenberg.
+
 ## References
 
 - Run `nargo --help` to access the full list of available `nargo` commands
 - Read https://noir-lang.org/docs/ for documentation of language syntaxes, dependency architecture, tooling references, and tutorials
+- Proving backends:
+  - For Barretenberg specifics, read `references/proving-backends/barretenberg.md`.
