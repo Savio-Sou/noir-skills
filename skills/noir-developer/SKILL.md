@@ -22,6 +22,10 @@ If the environment is unsupported by `nargo` (e.g. native Windows), guide the us
 
 Define private inputs, public inputs (if any), and public outputs (if any) for each Noir program.
 
+### Project Creation
+
+When creating a Noir project, use `nargo new` or `nargo init` to scaffold it.
+
 ### Compilation
 
 Use `nargo` (not `noir_wasm`) for compilation; it is the maintained path.
